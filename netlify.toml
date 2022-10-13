@@ -5,10 +5,19 @@
   NODE_ENV = "10.15.3"
 
 [dev]
+  publish = "dist"    
   command = "npm run start"
-
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[[redirects]]
+  from ="/posts/"
+  to = "/news/:splat"
+
+  [[redirects]]
+    from = "*"
+    to = "/not-found"
+    status = 404
